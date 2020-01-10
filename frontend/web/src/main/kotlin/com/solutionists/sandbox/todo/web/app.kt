@@ -6,6 +6,7 @@ import react.dom.div
 
 fun RBuilder.app(client: TodoClient) = div(classes = "App") {
   div(classes = "container-fluid") {
+    Template(listOf("Rodney", "Tom", "Steve", "Brian"))
   }
 }
 

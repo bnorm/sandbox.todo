@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
+
 plugins {
   kotlin("js")
 }
@@ -17,11 +19,10 @@ kotlin {
       webpackTask {
         runTask {
           // TODO: use dsl after KT-32016 will be fixed
-          devServer = org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig.DevServer(
-            true, false, true, true, false,
-            8081,
-            mapOf("/api/v1" to "http://0.0.0.0:8080/"),
-            listOf("$projectDir/src/main/resources")
+          devServer = KotlinWebpackConfig.DevServer(
+            port = 8081,
+            proxy = mapOf("/api/v1" to "http://0.0.0.0:8080/"),
+            contentBase = listOf("$projectDir/src/main/resources")
           )
           outputFileName = "web.js"
         }
@@ -49,12 +50,20 @@ kotlin {
         implementation("org.jetbrains:kotlin-css-js:1.0.0-pre.89-kotlin-1.3.60")
         implementation("org.jetbrains:kotlin-styled:1.0.0-pre.89-kotlin-1.3.60")
 
+        implementation("io.github.microutils:kotlin-logging-js:1.7.8")
+
         implementation(npm("core-js", "3.2.0"))
         implementation(npm("react", "16.9.0"))
         implementation(npm("react-dom", "16.9.0"))
 
         implementation(npm("inline-style-prefixer", "5.1.0"))
         implementation(npm("styled-components", "4.4.0"))
+
+        implementation(npm("bufferutil"))
+        implementation(npm("utf-8-validate"))
+        implementation(npm("abort-controller"))
+        implementation(npm("text-encoding"))
+        implementation(npm("fs"))
       }
     }
   }
