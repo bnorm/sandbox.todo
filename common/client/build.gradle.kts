@@ -13,7 +13,7 @@ kotlin {
   sourceSets {
     val ktorVersion: String by rootProject.extra
 
-    val commonMain by getting {
+    named("commonMain") {
       dependencies {
         implementation(kotlin("stdlib"))
 
@@ -24,7 +24,7 @@ kotlin {
         implementation("io.ktor:ktor-client-serialization:$ktorVersion")
       }
     }
-    val jvmMain by getting {
+    named("jvmMain") {
       dependencies {
         implementation(kotlin("stdlib-jdk8"))
 
@@ -35,7 +35,7 @@ kotlin {
         implementation("io.ktor:ktor-client-serialization-jvm:$ktorVersion")
       }
     }
-    val jsMain by getting {
+    named("jsMain") {
       dependencies {
         implementation(kotlin("stdlib-js"))
 

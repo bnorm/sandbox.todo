@@ -13,18 +13,18 @@ kotlin {
   sourceSets {
     val serializationRuntimeVersion: String by rootProject.extra
 
-    val commonMain by getting {
+    named("commonMain") {
       dependencies {
         implementation(kotlin("stdlib"))
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializationRuntimeVersion")
       }
     }
-    val jvmMain by getting {
+    named("jvmMain") {
       dependencies {
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serializationRuntimeVersion")
       }
     }
-    val jsMain by getting {
+    named("jsMain") {
       dependencies {
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serializationRuntimeVersion")
       }
