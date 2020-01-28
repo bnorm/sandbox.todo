@@ -10,12 +10,12 @@ import kotlin.browser.document
 private val log = KotlinLogging.logger {}
 
 fun main() {
-  log.info { "Starting Web UI" }
-
   requireAll(require.context("/", true, js("/\\.css$/")))
 
-  val client = TodoClient(Url("/api/v1"))
-  render(document.getElementById("root")) {
-    app(client)
+  document.getElementById("root")?.let {    
+    val client = TodoClient(Url("/api/v1"))
+
+    log.info { "Starting Web UI" }
+    render(it) { app(client) }
   }
 }

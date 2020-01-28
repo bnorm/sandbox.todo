@@ -66,6 +66,11 @@ kotlin {
         implementation(npm("fs"))
       }
     }
+    test {
+      dependencies {
+        implementation(kotlin("test-js"))
+      }
+    }
   }
 }
 
