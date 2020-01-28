@@ -1,17 +1,19 @@
 package com.solutionists.sandbox.todo.service
 
 import io.ktor.application.Application
-import io.ktor.http.content.defaultResource
-import io.ktor.http.content.resources
+import io.ktor.http.content.resource
 import io.ktor.http.content.static
+import io.ktor.http.content.staticBasePackage
 import io.ktor.routing.route
 import io.ktor.routing.routing
 
 fun Application.api() {
   routing {
     static("/") {
-      resources("web-ui")
-      defaultResource("web-ui/index.html")
+      staticBasePackage = "web-ui"
+      resource("favicon.ico")
+      resource("web.js")
+      resource("{...}", "index.html")
     }
 
     route("/api/v1") {
