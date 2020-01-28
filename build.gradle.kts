@@ -1,5 +1,5 @@
 plugins {
-  val kotlinVersion = "1.3.61"
+  val kotlinVersion = "1.3.70-eap-42"
 
   kotlin("jvm") version kotlinVersion apply false
   kotlin("js") version kotlinVersion apply false
@@ -23,6 +23,7 @@ allprojects {
     jcenter()
     maven { setUrl("https://kotlin.bintray.com/kotlinx") }
     maven { setUrl("https://dl.bintray.com/kotlin/kotlin-js-wrappers") }
+    maven { setUrl("https://dl.bintray.com/kotlin/kotlin-eap") }
   }
 }
 
