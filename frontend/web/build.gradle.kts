@@ -45,6 +45,7 @@ kotlin {
         implementation("org.jetbrains:kotlin-extensions:1.0.1-pre.89-kotlin-1.3.60")
         implementation("org.jetbrains:kotlin-react:16.9.0-pre.89-kotlin-1.3.60")
         implementation("org.jetbrains:kotlin-react-dom:16.9.0-pre.89-kotlin-1.3.60")
+        implementation("org.jetbrains:kotlin-react-router-dom:4.3.1-pre.89-kotlin-1.3.60")
 
         implementation("org.jetbrains:kotlin-css:1.0.0-pre.89-kotlin-1.3.60")
         implementation("org.jetbrains:kotlin-css-js:1.0.0-pre.89-kotlin-1.3.60")
@@ -55,6 +56,7 @@ kotlin {
         implementation(npm("core-js", "3.2.0"))
         implementation(npm("react", "16.9.0"))
         implementation(npm("react-dom", "16.9.0"))
+        implementation(npm("react-router-dom", "4.3.1"))
 
         implementation(npm("inline-style-prefixer", "5.1.0"))
         implementation(npm("styled-components", "4.4.0"))

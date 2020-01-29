@@ -14,6 +14,7 @@ import io.ktor.response.respond
 import io.ktor.serialization.serialization
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import org.slf4j.LoggerFactory
 import java.util.UUID
 
 fun main() {
@@ -22,6 +23,7 @@ fun main() {
 
     install(CallLogging) {
       mdc("request.id") { UUID.randomUUID().toString().substring(0, 8) }
+      logger = LoggerFactory.getLogger("com.solutionists.sandbox.todo.service")
     }
 
     install(ContentNegotiation) {

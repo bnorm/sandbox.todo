@@ -11,7 +11,6 @@ fun Application.api() {
   routing {
     static("/") {
       staticBasePackage = "web-ui"
-      resource("favicon.ico")
       resource("web.js")
       resource("{...}", "index.html")
     }

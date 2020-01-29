@@ -1,5 +1,5 @@
 plugins {
-  val kotlinVersion = "1.3.70-eap-42"
+  val kotlinVersion = "1.3.61"
 
   kotlin("jvm") version kotlinVersion apply false
   kotlin("js") version kotlinVersion apply false
