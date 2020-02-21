@@ -39,19 +39,11 @@ tasks.withType<KotlinCompile>().configureEach {
   kotlinOptions.jvmTarget = "1.8"
 }
 
-// Include the website resources
-sourceSets {
-  main {
-    resources {
-      setSrcDirs(srcDirs + "$buildDir/ui/dist")
-    }
+tasks.processResources.configure {
+  from(tasks.getByPath(":frontend:web:jsBundle")) {
+    into("web-ui")
   }
 }
-val copyWebUi = tasks.register<Sync>("copyWebUi") {
-  from(tasks.findByPath(":frontend:web:jsBundle"))
-  into("$buildDir/ui/dist/web-ui")
-}
-tasks.findByPath("processResources")?.dependsOn(copyWebUi)
 
 application {
   mainClassName = "com.solutionists.sandbox.todo.service.MainKt"
