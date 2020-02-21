@@ -42,14 +42,14 @@ kotlin {
         implementation(kotlin("stdlib-js"))
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutinesVersion")
 
-        implementation("org.jetbrains:kotlin-extensions:1.0.1-pre.89-kotlin-1.3.60")
-        implementation("org.jetbrains:kotlin-react:16.9.0-pre.89-kotlin-1.3.60")
-        implementation("org.jetbrains:kotlin-react-dom:16.9.0-pre.89-kotlin-1.3.60")
-        implementation("org.jetbrains:kotlin-react-router-dom:4.3.1-pre.89-kotlin-1.3.60")
+        implementation("org.jetbrains:kotlin-extensions:1.0.1-pre.91-kotlin-1.3.61")
+        implementation("org.jetbrains:kotlin-react:16.9.0-pre.91-kotlin-1.3.61")
+        implementation("org.jetbrains:kotlin-react-dom:16.9.0-pre.91-kotlin-1.3.61")
+        implementation("org.jetbrains:kotlin-react-router-dom:4.3.1-pre.91-kotlin-1.3.61")
 
-        implementation("org.jetbrains:kotlin-css:1.0.0-pre.89-kotlin-1.3.60")
-        implementation("org.jetbrains:kotlin-css-js:1.0.0-pre.89-kotlin-1.3.60")
-        implementation("org.jetbrains:kotlin-styled:1.0.0-pre.89-kotlin-1.3.60")
+        implementation("org.jetbrains:kotlin-css:1.0.0-pre.91-kotlin-1.3.61")
+        implementation("org.jetbrains:kotlin-css-js:1.0.0-pre.91-kotlin-1.3.61")
+        implementation("org.jetbrains:kotlin-styled:1.0.0-pre.91-kotlin-1.3.61")
 
         implementation("io.github.microutils:kotlin-logging-js:1.7.8")
 
