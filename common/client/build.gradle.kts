@@ -43,6 +43,12 @@ kotlin {
 
         implementation("io.ktor:ktor-client-json-js:$ktorVersion")
         implementation("io.ktor:ktor-client-serialization-js:$ktorVersion")
+
+        implementation(npm("text-encoding", "0.7.0"))
+        implementation(npm("abort-controller", "3.0.0"))
+        implementation(npm("utf-8-validate", "5.0.2"))
+        implementation(npm("bufferutil", "4.0.1"))
+        implementation(npm("fs", "0.0.2"))
       }
     }
   }

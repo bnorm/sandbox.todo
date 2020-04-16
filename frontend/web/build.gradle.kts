@@ -4,18 +4,10 @@ plugins {
   kotlin("js")
 }
 
-// https://github.com/felipehjcosta/chat-app
 kotlin {
   target {
     browser {
-      compilations.all {
-        kotlinOptions {
-          metaInfo = true
-          sourceMap = true
-          moduleKind = "commonjs"
-          main = "call"
-        }
-      }
+      useCommonJs()
       webpackTask {
         runTask {
           // TODO: use dsl after KT-32016 will be fixed
@@ -29,51 +21,37 @@ kotlin {
       }
     }
   }
+}
 
-  sourceSets {
-    // https://github.com/mkraynov/kfsad/blob/kotlin-1.3.40-preview/shared/build.gradle
-    main {
-      dependencies {
-        val coroutinesVersion: String by rootProject.extra
+dependencies {
+  val coroutinesVersion: String by rootProject.extra
 
-        implementation(project(":common:model"))
-        implementation(project(":common:client"))
+  implementation(project(":common:model"))
+  implementation(project(":common:client"))
 
-        implementation(kotlin("stdlib-js"))
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutinesVersion")
+  implementation(kotlin("stdlib-js"))
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutinesVersion")
 
-        implementation("org.jetbrains:kotlin-extensions:1.0.1-pre.91-kotlin-1.3.61")
-        implementation("org.jetbrains:kotlin-react:16.9.0-pre.91-kotlin-1.3.61")
-        implementation("org.jetbrains:kotlin-react-dom:16.9.0-pre.91-kotlin-1.3.61")
-        implementation("org.jetbrains:kotlin-react-router-dom:4.3.1-pre.91-kotlin-1.3.61")
+  implementation("org.jetbrains:kotlin-extensions:1.0.1-pre.94-kotlin-1.3.70")
+  implementation("org.jetbrains:kotlin-react:16.13.0-pre.94-kotlin-1.3.70")
+  implementation("org.jetbrains:kotlin-react-dom:16.13.0-pre.94-kotlin-1.3.70")
+  implementation("org.jetbrains:kotlin-react-router-dom:4.3.1-pre.94-kotlin-1.3.70")
 
-        implementation("org.jetbrains:kotlin-css:1.0.0-pre.91-kotlin-1.3.61")
-        implementation("org.jetbrains:kotlin-css-js:1.0.0-pre.91-kotlin-1.3.61")
-        implementation("org.jetbrains:kotlin-styled:1.0.0-pre.91-kotlin-1.3.61")
+  implementation("org.jetbrains:kotlin-css:1.0.0-pre.94-kotlin-1.3.70")
+  implementation("org.jetbrains:kotlin-css-js:1.0.0-pre.94-kotlin-1.3.70")
+  implementation("org.jetbrains:kotlin-styled:1.0.0-pre.94-kotlin-1.3.70")
 
-        implementation("io.github.microutils:kotlin-logging-js:1.7.8")
+  implementation("io.github.microutils:kotlin-logging-js:1.7.8")
 
-        implementation(npm("core-js", "3.2.0"))
-        implementation(npm("react", "16.9.0"))
-        implementation(npm("react-dom", "16.9.0"))
-        implementation(npm("react-router-dom", "4.3.1"))
+  implementation(npm("core-js", "3.2.0"))
+  implementation(npm("react", "16.13.0"))
+  implementation(npm("react-dom", "16.13.0"))
+  implementation(npm("react-router-dom", "4.3.1"))
 
-        implementation(npm("inline-style-prefixer", "5.1.0"))
-        implementation(npm("styled-components", "4.4.0"))
+  implementation(npm("inline-style-prefixer", "5.1.0"))
+  implementation(npm("styled-components", "4.4.0"))
 
-        implementation(npm("bufferutil"))
-        implementation(npm("utf-8-validate"))
-        implementation(npm("abort-controller"))
-        implementation(npm("text-encoding"))
-        implementation(npm("fs"))
-      }
-    }
-    test {
-      dependencies {
-        implementation(kotlin("test-js"))
-      }
-    }
-  }
+  testImplementation(kotlin("test-js"))
 }
 
 // https://github.com/avdim/kotlin-mpp-js-browser/blob/master/build.gradle.kts

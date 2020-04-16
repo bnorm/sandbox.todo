@@ -28,6 +28,6 @@ class ComponentTemplateTest {
     }
     println("container.innerHTML: <${container.innerHTML}>")
     println("container.textContent: <${container.textContent}>")
-    TODO()
+//    TODO()
   }
 }

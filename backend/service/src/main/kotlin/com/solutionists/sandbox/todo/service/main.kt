@@ -11,6 +11,7 @@ import io.ktor.features.toLogString
 import io.ktor.http.HttpStatusCode
 import io.ktor.locations.Locations
 import io.ktor.response.respond
+import io.ktor.serialization.json
 import io.ktor.serialization.serialization
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
@@ -27,7 +28,7 @@ fun main() {
     }
 
     install(ContentNegotiation) {
-      serialization()
+      json()
     }
 
     install(Locations)
