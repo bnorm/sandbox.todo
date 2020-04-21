@@ -19,6 +19,10 @@ kotlin {
           outputFileName = "web.js"
         }
       }
+      // TODO: https://github.com/ktorio/ktor/issues/1400
+      dceTask {
+        keep("ktor-ktor-io.\$\$importsForInline\$\$.ktor-ktor-io.io.ktor.utils.io")
+      }
     }
   }
 }
